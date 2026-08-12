@@ -1,0 +1,1 @@
+<?php echo "SI ESTOY EN LA CARPETA CORRECTA"; ?>

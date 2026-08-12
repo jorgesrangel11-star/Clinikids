@@ -1,0 +1,16 @@
+/* global styles */
+
+
+/* Cliente styles */
+
+
+/*  Admin styles */
+ #admin-nav {
+            min-height: 100vh;
+            flex-basis: 280px;
+            flex-shrink: 0;
+        }
+
+        #admin-main {
+            flex-grow: 1;
+        }
