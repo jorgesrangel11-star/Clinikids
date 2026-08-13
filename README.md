@@ -17,7 +17,7 @@ Plataforma integral (web y móvil) diseñada para modernizar y agilizar la admin
 
 
 
-## 👨‍💻 Desarrollador
+##  Desarrollador
 
 **Nizfrank Jorge Sánchez Rangel**
 * Desarrollador Frontend y QA
