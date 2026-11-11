@@ -1,5 +1,5 @@
 <aside id="admin-nav" class="p-4 text-white bg-dark">
-    <!-- SIDEBAR -->
+   
     <nav>
         <a href="#">
             <img src="../assets/img/silla logo.jpg" alt="" height="60">
