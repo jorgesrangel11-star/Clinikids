@@ -1,7 +1,6 @@
 <?php
 @session_start();
 
-//validacion de acceso
 
 require_once __DIR__ .'/../config/db.php';
 
@@ -111,8 +110,8 @@ function eliminar_producto($id_prod){
         ];
     }
     mysqli_stmt_bind_param($delete_preparado, 'i', $id_prod);
-    $query_ok = mysqli_stmt_execute($delete_preparado); //true o false
-    $rows_ok = mysqli_affected_rows($conn);//ultimo moviento en la base de datos y 0>
+    $query_ok = mysqli_stmt_execute($delete_preparado); 
+    $rows_ok = mysqli_affected_rows($conn);
 
     if($query_ok && $rows_ok > 0){
         return [
@@ -162,7 +161,7 @@ if($_SERVER['REQUEST_METHOD']==='POST'){
                     $desc = trim($_POST['desc']);
                     $prec = (float)$_POST['prec'];
                     $img = trim($_POST['img']);
-                    $estatus_str = trim($_POST['estatus']); //Esto es para la conversion de estatus
+                    $estatus_str = trim($_POST['estatus']); 
                     $estatus = ($estatus_str === 'Activo') ? 1 : 0;
                     $stock = (int)$_POST['stock'];
 
