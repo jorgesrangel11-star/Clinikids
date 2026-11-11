@@ -1,6 +1,6 @@
 <?php
 session_start();
-// Seguridad: Solo el Admin entra aquí
+
 if(!isset($_SESSION['id_usr']) || $_SESSION['tip_usu'] != 1){
     header('Location: ../login.php?error=' . urlencode('Acceso denegado'));
     exit;
