@@ -8,7 +8,7 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST' || $_SESSION['tip_usu'] != 2) {
     exit;
 }
 
-// 2. Recibir datos del formulario
+
 $id_tutor = $_SESSION['id_usr']; 
 $nom_paciente = trim($_POST['nom_paciente']);
 $fecha_nac = $_POST['fecha_nac'];
