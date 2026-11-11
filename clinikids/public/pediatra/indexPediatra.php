@@ -45,7 +45,7 @@ $id_doc = $_SESSION['id_usr'];
                 </thead>
                 <tbody>
                     <?php
-                    // Consulta adaptada a tus tablas actuales
+                    
                     $sql = "SELECT c.id_cita, c.fecha_cita, c.hora_cita, c.estatus, p.nombre AS nom_paciente, p.id_paciente, u.nom_usr AS nom_tutor
                             FROM citas c
                             JOIN pacientes p ON c.id_paciente = p.id_paciente
