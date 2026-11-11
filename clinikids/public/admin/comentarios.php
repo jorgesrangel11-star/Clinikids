@@ -1,10 +1,6 @@
 <?php
 session_start();
-// Si tienes validación, puedes dejar esto o quitarlo:
-// if (!isset($_SESSION['admin'])) {
-//     header("Location: ../login.php");
-//     exit();
-// }
+
 ?>
 
 <!DOCTYPE html>
@@ -37,7 +33,7 @@ session_start();
 <div class="container my-4">
     <h2 class="text-center mb-4">Comentarios de Clientes</h2>
 
-    <!-- COMENTARIOS PREDEFINIDOS, SIN BASE DE DATOS -->
+ 
 
     <div class="comentario-card">
         <span class="producto">Repuesto de ruedas</span>
@@ -76,7 +72,7 @@ session_start();
     </div>
 
 </div>
-<!-- boton de regresar -->
+
 <div class="container mb-4">
     <a href="./index.php" class="btn btn-secondary">Regresar al Panel Admin</a>
 
