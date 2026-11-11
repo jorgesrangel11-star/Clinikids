@@ -2,27 +2,26 @@
 session_start();
 require_once __DIR__ . '/../config/db.php';
 
-// 1. Seguridad: Solo permitimos POST y que sea un Tutor (Tipo 2)
+// 1. Seguridad
 if ($_SERVER['REQUEST_METHOD'] !== 'POST' || $_SESSION['tip_usu'] != 2) {
     header('Location: ../public/login.php?error=' . urlencode('Acceso no permitido.'));
     exit;
 }
 
 // 2. Recibir datos del formulario
-$id_tutor = $_SESSION['id_usr']; // Tomamos el ID del que inició sesión 
+$id_tutor = $_SESSION['id_usr']; 
 $nom_paciente = trim($_POST['nom_paciente']);
 $fecha_nac = $_POST['fecha_nac'];
 $historial = trim($_POST['historial']);
 
-// 3. Insertar en la tabla 'pacientes'
-// La consulta SQL usa el id_tutor para amarrar al niño con su papá
+
 $sql = "INSERT INTO pacientes (id_tutor, nom_paciente, fecha_nacimiento, historial_medico) VALUES (?, ?, ?, ?)";
 $stmt = mysqli_prepare($conn, $sql);
 mysqli_stmt_bind_param($stmt, "isss", $id_tutor, $nom_paciente, $fecha_nac, $historial);
 
 if (mysqli_stmt_execute($stmt)) {
     mysqli_close($conn);
-    // Lo mandamos al index del cliente con mensaje de éxito
+    
     header('Location: ../public/cliente/indexCliente.php?mensaje=' . urlencode('Paciente registrado con éxito.'));
     exit;
 } else {
