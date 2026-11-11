@@ -7,7 +7,7 @@ if (!isset($_SESSION['id_pediatra'])) {
 
 require_once '../config/db.php';
 
-// Validar que recibimos un ID de paciente
+
 if (!isset($_GET['id'])) {
     echo "Paciente no especificado.";
     exit();
@@ -15,7 +15,7 @@ if (!isset($_GET['id'])) {
 
 $id_paciente = $_GET['id'];
 
-// Consulta para obtener datos del paciente y su tutor (usando tus tablas)
+
 $sql = "SELECT p.nombre AS paciente, t.nombre AS tutor, t.mail 
         FROM pacientes p 
         JOIN tutores t ON p.id_tutor = t.id_tutor 
