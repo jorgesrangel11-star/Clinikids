@@ -15,7 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         exit;
     }
 
-    // Hash de seguridad
+    
     $pass_hash = password_hash($pass, PASSWORD_DEFAULT);
 
     $sql = "INSERT INTO pediatras (nombre, cedula, especialidad, mail, pass) VALUES (?, ?, ?, ?, ?)";
