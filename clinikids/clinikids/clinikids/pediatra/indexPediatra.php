@@ -1,9 +1,9 @@
 <?php
 session_start();
-// __DIR__ ya sabe en qué carpeta estás, solo dile cómo llegar a config
+
 require_once __DIR__ . '/../config/db.php';
 
-// Seguridad: Solo Pediatras activos
+
 if(!isset($_SESSION['id_usr']) || $_SESSION['tip_usu'] != 3){
     header('Location: ../login.php?error=' . urlencode('Acceso solo para médicos'));
     exit;
