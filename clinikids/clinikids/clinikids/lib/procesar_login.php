@@ -6,7 +6,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = mysqli_real_escape_string($conexion, trim($_POST['mail']));
     $password_input = $_POST['pass'];
 
-    // 1. BUSCAR EN TUTORES (Usando columna 'pass')
+    
     $sql_tutor = "SELECT id_tutor, pass, nombre FROM tutores WHERE mail = ?";
     $stmt = mysqli_prepare($conexion, $sql_tutor);
     mysqli_stmt_bind_param($stmt, "s", $email);
@@ -19,13 +19,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION['nombre'] = $usuario['nombre'];
             $_SESSION['rol']    = 'Tutor';
             
-            // RUTA CORREGIDA: Según tu VS Code la ruta es esta
+         
             header("Location: ../public/cliente/indexCliente.php"); 
             exit();
         }
     } 
 
-    // 2. BUSCAR EN PEDIATRAS
     $sql_pediatra = "SELECT id_pediatra, pass, nombre FROM pediatras WHERE mail = ?";
     $stmt_p = mysqli_prepare($conexion, $sql_pediatra);
     mysqli_stmt_bind_param($stmt_p, "s", $email);
